@@ -1,4 +1,4 @@
-package academy.tochkavhoda.figures.v2;
+package academy.tochkavhoda.figures.v3;
 
 import java.util.Objects;
 

@@ -1,8 +1,8 @@
-package academy.tochkavhoda.misc.v2;
+package academy.tochkavhoda.misc.v3;
 
-import academy.tochkavhoda.figures.v2.Point;
-import academy.tochkavhoda.iface.v2.Movable;
-import academy.tochkavhoda.iface.v2.Resizable;
+import academy.tochkavhoda.figures.v3.Point;
+import academy.tochkavhoda.iface.v3.Movable;
+import academy.tochkavhoda.iface.v3.Resizable;
 
 import java.util.Objects;
 

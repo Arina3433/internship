@@ -1,9 +1,8 @@
-package academy.tochkavhoda.misc.v2;
+package academy.tochkavhoda.misc.v3;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class TestCountryPlot {
     private static final double DOUBLE_EPS = 1E-6;

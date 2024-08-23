@@ -1,6 +1,6 @@
-package academy.tochkavhoda.misc.v2;
+package academy.tochkavhoda.misc.v3;
 
-import academy.tochkavhoda.figures.v2.Point;
+import academy.tochkavhoda.figures.v3.Point;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
