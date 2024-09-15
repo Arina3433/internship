@@ -6,6 +6,7 @@ import academy.tochkavhoda.iface.v3.Resizable;
 
 public abstract class Figure implements Movable, Resizable, HasArea {
 
+    // REVU обе не нужны все есть в Movable
     @Override
     public abstract void moveTo(int x, int y);
 

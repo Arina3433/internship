@@ -8,6 +8,7 @@ public class Group {
     private final List<Trainee> trainees;
 
     public Group(String name, String room) throws TrainingException {
+        // REVU вызовите сеттеры, не дудлируйте код
         if (name == null || name.isBlank()) {
             throw new TrainingException(TrainingErrorCode.GROUP_WRONG_NAME);
         } else if (room == null || room.isBlank()) {
@@ -52,6 +53,7 @@ public class Group {
     }
 
     public void removeTrainee(Trainee trainee) throws TrainingException {
+        // REVU не надо contains, remove сама скажет
         if (!trainees.contains(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
@@ -110,6 +112,7 @@ public class Group {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
 
+        // REVU а без нахождения maxRating сможете ? В один проход
         int maxRating = trainees.stream()
                 .mapToInt(Trainee::getRating)
                 .max()

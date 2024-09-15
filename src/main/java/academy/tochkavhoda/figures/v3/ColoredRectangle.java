@@ -11,6 +11,7 @@ public class ColoredRectangle extends Rectangle implements Colored {
 
     private Color color;
 
+    // REVU В классе должен быть только один конструктор, явно присваивающий значения полям. Остальные должны вызывать другой конструктор
     public ColoredRectangle(Point leftTop, Point rightBottom, Color color) throws ColorException {
         super(leftTop, rightBottom);
         if (color == null) {
@@ -68,6 +69,8 @@ public class ColoredRectangle extends Rectangle implements Colored {
         this.color = Color.RED;
     }
 
+    // REVU если метод только вызывает тот же метод суперкласса, то его не нужно переопределять
+    // удалите все такие методы
     @Override
     public Point getTopLeft() {
         return super.getTopLeft();

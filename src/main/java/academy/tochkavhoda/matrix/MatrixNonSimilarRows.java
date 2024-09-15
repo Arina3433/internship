@@ -10,6 +10,8 @@ public class MatrixNonSimilarRows {
     }
 
     public Set<int[]> getNonSimilarRows() {
+        // REVU лучше Map<Set<Integer>, int[]>
+        // и LinkedHashMap не нужен, хватит просто HashMap
         Map<Set<Integer>, Integer> uniqueRows = new LinkedHashMap<>();
 
         for (int i = 0; i < matrix.length; i++) {
@@ -22,6 +24,7 @@ public class MatrixNonSimilarRows {
             uniqueRows.putIfAbsent(rowSet, i);
         }
 
+        // REVU тоже не нужен. uniqueRows.values и будет результат (через new HashSet)
         Set<int[]> result = new LinkedHashSet<>();
         for (Integer el : uniqueRows.values()) {
             result.add(matrix[el]);

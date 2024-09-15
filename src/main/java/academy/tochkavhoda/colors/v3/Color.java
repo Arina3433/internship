@@ -10,6 +10,8 @@ public enum Color {
             throw new ColorException(ColorErrorCode.NULL_COLOR);
         }
 
+        // REVU а если их 1000 будет ?
+        // Color.valueOf и ловите IllegalArgumentException
         switch (colorString.toUpperCase()) {
             case "RED":
                 return RED;

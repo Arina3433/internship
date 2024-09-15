@@ -29,6 +29,7 @@ public class TraineeBidiMap {
             throw new TrainingException(TrainingErrorCode.DUPLICATE_PASSPORT);
         }
 
+        // REVU bidiMap.replace
         bidiMap.removeValue(trainee);
         bidiMap.put(passport, trainee);
     }
@@ -50,6 +51,7 @@ public class TraineeBidiMap {
     }
 
     public Trainee getTraineeByPassport(String passport) throws TrainingException {
+        // REVU не надо containsKey, get сама скажет
         if (!bidiMap.containsKey(passport)) {
             throw new TrainingException(TrainingErrorCode.PASSPORT_NOT_FOUND);
         }
@@ -58,6 +60,7 @@ public class TraineeBidiMap {
     }
 
     public String getPassportByTrainee(Trainee trainee) throws TrainingException {
+        // REVU не надо containsValue, getKey сама скажет
         if (!bidiMap.containsValue(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }

@@ -30,6 +30,8 @@ public class ColoredCircle extends Circle {
         this.color = 1;
     }
 
+    // REVU если метод только вызывает тот же метод суперкласса, то его не нужно переопределять
+    // удалите все такие методы
     @Override
     public Point getCenter() {
         return super.getCenter();

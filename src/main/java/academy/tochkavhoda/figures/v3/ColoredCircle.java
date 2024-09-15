@@ -10,6 +10,7 @@ import java.util.Objects;
 public class ColoredCircle extends Circle implements Colored {
     private Color color;
 
+    // REVU В классе должен быть только один конструктор, явно присваивающий значения полям. Остальные должны вызывать другой конструктор
     public ColoredCircle(Point center, int radius, Color color) throws ColorException {
         super(center, radius);
         if (color == null) {

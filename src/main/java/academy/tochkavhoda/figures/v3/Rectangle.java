@@ -9,6 +9,7 @@ public class Rectangle extends Figure implements Stretchable {
     private Point topLeft;
     private Point bottomRight;
 
+    // REVU В классе должен быть только один конструктор, явно присваивающий значения полям. Остальные должны вызывать другой конструктор
     public Rectangle(Point topLeft, Point bottomRight) {
         this.topLeft = topLeft;
         this.bottomRight = bottomRight;

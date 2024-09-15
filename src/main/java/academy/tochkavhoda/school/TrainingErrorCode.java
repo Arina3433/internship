@@ -1,6 +1,12 @@
 package academy.tochkavhoda.school;
 
 public enum TrainingErrorCode {
+    // REVU а тут надо было добавить
+    // private String errorString;
+    // конструктор и т.д.
+    // и дать дружественное описание
+    // например
+    //     TRAINEE_WRONG_FIRSTNAME("Trainee first name is null or an empty string"),
     TRAINEE_WRONG_FIRSTNAME,
     TRAINEE_WRONG_LASTNAME,
     TRAINEE_WRONG_RATING,

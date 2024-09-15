@@ -7,6 +7,7 @@ public class Square extends Figure {
     private Point topLeft;
     private int size;
 
+    // REVU В классе должен быть только один конструктор, явно присваивающий значения полям. Остальные должны вызывать другой конструктор
     public Square(Point topLeft, int size) {
         this.topLeft = topLeft;
         this.size = size;

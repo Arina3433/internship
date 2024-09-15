@@ -80,6 +80,7 @@ public class StringOperations {
     public static String getCommonPrefix(String string1, String string2) {
         int maxPrefix = Math.min(string1.length(), string2.length());
 
+        // REVU можно и так, но хватило бы одного вызова substring, если в цикле только считать символы, пока совпадают
         for (int i = 0; i < maxPrefix; i++) {
             if (string1.charAt(i) != string2.charAt(i)) {
                 return string1.substring(0, i);
@@ -94,10 +95,12 @@ public class StringOperations {
     }
 
     public static boolean isPalindrome(String string) {
+        // REVU сделайте без reverse
         return string.equals(new StringBuilder(string).reverse().toString());
     }
 
     public static boolean isPalindromeIgnoreCase(String string) {
+        // REVU вызовите предыдущий метод
         return string.equalsIgnoreCase(new StringBuilder(string).reverse().toString());
     }
 

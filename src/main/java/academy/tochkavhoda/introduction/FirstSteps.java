@@ -112,6 +112,7 @@ public class FirstSteps {
 
     public void cube(int[] array) {
         for (int i = 0; i < array.length; i++) {
+            // REVU *=
             array[i] = array[i] * array[i] * array[i];
         }
     }
@@ -166,6 +167,7 @@ public class FirstSteps {
         int result = 0;
 
         for (int[] row : matrix) {
+            // REVU вызовите sum для линейного массива
             for (int el : row) {
                 result += el;
             }
@@ -183,6 +185,7 @@ public class FirstSteps {
 
         for (int[] row : matrix) {
             for (int el : row) {
+                // REVU аналогично
                 if (el > result) {
                     result = el;
                 }

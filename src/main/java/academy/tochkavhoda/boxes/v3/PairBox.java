@@ -33,10 +33,12 @@ public class PairBox<T extends Figure, C extends Figure> implements HasArea {
         return contentFirst.getArea() + contentSecond.getArea();
     }
 
+    // REVU вызовите следующий метод
     public boolean isAreaEqual(PairBox<?, ?> pairBox) {
         return Math.abs(getArea() - pairBox.getArea()) < 1e-10;
     }
 
+    // REVU лучше PairBox<? extends ... ? extends ...>
     public static boolean isAreaEqual(PairBox<?, ?> pairBox1, PairBox<?, ?> pairBox2) {
         return Math.abs(pairBox1.getArea() - pairBox2.getArea()) < 1e-10;
     }
