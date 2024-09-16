@@ -25,8 +25,7 @@ public class ArrayBox<T extends Figure> {
         content[i] = element;
     }
 
-    // REVU лучше ArrayBox<? extends...>
-    public boolean isSameSize(ArrayBox<?> box) {
+    public boolean isSameSize(ArrayBox<? extends Figure> box) {
         return this.content.length == box.getContent().length;
     }
 }

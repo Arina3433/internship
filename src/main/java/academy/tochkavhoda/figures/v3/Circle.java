@@ -6,25 +6,21 @@ public class Circle extends Figure {
     private Point center;
     private int radius;
 
-    // REVU В классе должен быть только один конструктор, явно присваивающий значения полям. Остальные должны вызывать другой конструктор
     public Circle(Point center, int radius) {
         this.center = center;
         this.radius = radius;
     }
 
     public Circle(int xCenter, int yCenter, int radius) {
-        this.center = new Point(xCenter, yCenter);
-        this.radius = radius;
+        this(new Point(xCenter, yCenter), radius);
     }
 
     public Circle(int radius) {
-        this.center = new Point(0, 0);
-        this.radius = radius;
+        this(0, 0, radius);
     }
 
     public Circle() {
-        this.center = new Point(0, 0);
-        this.radius = 1;
+        this(0, 0, 1);
     }
 
     public Point getCenter() {

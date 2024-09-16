@@ -18,13 +18,11 @@ public class Circle {
     }
 
     public Circle(int radius) {
-        this.center = new Point(0, 0);
-        this.radius = radius;
+        this(new Point(0, 0), radius);
     }
 
     public Circle() {
-        this.center = new Point(0, 0);
-        this.radius = 1;
+        this(new Point(0, 0), 1);
     }
 
     public Point getCenter() {

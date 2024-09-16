@@ -10,15 +10,8 @@ public class School {
     private final Set<Group> groups;
 
     public School(String name, int year) throws TrainingException {
-        // REVU вызовите сеттеры, не дудлируйте код
-        if (name == null || name.isBlank()) {
-            throw new TrainingException(TrainingErrorCode.SCHOOL_WRONG_NAME);
-        } else if (year < 0) {
-            throw new TrainingException(TrainingErrorCode.SCHOOL_WRONG_YEAR);
-        }
-
-        this.name = name;
-        this.year = year;
+        setName(name);
+        setYear(year);
         this.groups = new HashSet<>();
     }
 
@@ -61,12 +54,9 @@ public class School {
     }
 
     public void removeGroup(Group group) throws TrainingException {
-        // REVU не надо contains, remove сама скажет
-        if (!groups.contains(group)) {
+        if (!groups.remove(group)) {
             throw new TrainingException(TrainingErrorCode.GROUP_NOT_FOUND);
         }
-
-        groups.remove(group);
     }
 
     public void removeGroup(String name) throws TrainingException {

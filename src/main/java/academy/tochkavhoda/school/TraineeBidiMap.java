@@ -30,6 +30,8 @@ public class TraineeBidiMap {
         }
 
         // REVU bidiMap.replace
+        // насколько я понимаю метод replace может заменить одного trainee с паспортом passport на нового trainee,
+        // но он не может заменить ключ? Т.е. нельзя с помощью replace заменить passport на другой
         bidiMap.removeValue(trainee);
         bidiMap.put(passport, trainee);
     }
@@ -51,21 +53,23 @@ public class TraineeBidiMap {
     }
 
     public Trainee getTraineeByPassport(String passport) throws TrainingException {
-        // REVU не надо containsKey, get сама скажет
-        if (!bidiMap.containsKey(passport)) {
+        Trainee trainee = bidiMap.get(passport);
+
+        if (trainee == null) {
             throw new TrainingException(TrainingErrorCode.PASSPORT_NOT_FOUND);
         }
 
-        return bidiMap.get(passport);
+        return trainee;
     }
 
     public String getPassportByTrainee(Trainee trainee) throws TrainingException {
-        // REVU не надо containsValue, getKey сама скажет
-        if (!bidiMap.containsValue(trainee)) {
+        String passport = bidiMap.getKey(trainee);
+
+        if (passport == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
 
-        return bidiMap.getKey(trainee);
+        return passport;
     }
 
     public Set<Trainee> getAllTrainees() {

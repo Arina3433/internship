@@ -8,15 +8,8 @@ public class Group {
     private final List<Trainee> trainees;
 
     public Group(String name, String room) throws TrainingException {
-        // REVU вызовите сеттеры, не дудлируйте код
-        if (name == null || name.isBlank()) {
-            throw new TrainingException(TrainingErrorCode.GROUP_WRONG_NAME);
-        } else if (room == null || room.isBlank()) {
-            throw new TrainingException(TrainingErrorCode.GROUP_WRONG_ROOM);
-        }
-
-        this.name = name;
-        this.room = room;
+        setName(name);
+        setRoom(room);
         this.trainees = new ArrayList<>();
     }
 
@@ -53,12 +46,9 @@ public class Group {
     }
 
     public void removeTrainee(Trainee trainee) throws TrainingException {
-        // REVU не надо contains, remove сама скажет
-        if (!trainees.contains(trainee)) {
+        if (!trainees.remove(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
-
-        trainees.remove(trainee);
     }
 
     public void removeTrainee(int index) throws TrainingException {
@@ -113,6 +103,7 @@ public class Group {
         }
 
         // REVU а без нахождения maxRating сможете ? В один проход
+        // Наверняка можно, но, к сожалению, затрудняюсь. Не очень глубоко погружена в тему стримов
         int maxRating = trainees.stream()
                 .mapToInt(Trainee::getRating)
                 .max()

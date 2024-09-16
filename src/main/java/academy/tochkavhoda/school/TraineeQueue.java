@@ -15,12 +15,13 @@ public class TraineeQueue {
     }
 
     public Trainee removeTrainee() throws TrainingException {
-        // REVU не надо isEmpty, poll сама скажет
-        if (queue.isEmpty()) {
+        Trainee trainee = queue.poll();
+
+        if (trainee == null) {
             throw new TrainingException(TrainingErrorCode.EMPTY_TRAINEE_QUEUE);
         }
 
-        return queue.poll();
+        return trainee;
     }
 
     public boolean isEmpty() {
