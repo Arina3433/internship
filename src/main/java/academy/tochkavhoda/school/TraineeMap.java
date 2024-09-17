@@ -13,6 +13,7 @@ public class TraineeMap {
     }
 
     public void addTraineeInfo(Trainee trainee, String institute) throws TrainingException {
+        // REVU не надо contains, putIfAbsent сама скажет
         if (traineeInstituteMap.containsKey(trainee)) {
             throw new TrainingException(TrainingErrorCode.DUPLICATE_TRAINEE);
         }
@@ -21,6 +22,7 @@ public class TraineeMap {
     }
 
     public void replaceTraineeInfo(Trainee trainee, String institute) throws TrainingException {
+        // REVU не надо contains, replace сама скажет
         if (!traineeInstituteMap.containsKey(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
@@ -29,6 +31,7 @@ public class TraineeMap {
     }
 
     public void removeTraineeInfo(Trainee trainee) throws TrainingException {
+        // REVU не надо contains, remove сама скажет
         if (!traineeInstituteMap.containsKey(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
@@ -41,6 +44,7 @@ public class TraineeMap {
     }
 
     public String getInstituteByTrainee(Trainee trainee) throws TrainingException {
+        // REVU не надо contains, get сама скажет
         if (!traineeInstituteMap.containsKey(trainee)) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
