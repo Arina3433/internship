@@ -102,16 +102,17 @@ public class Group {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
 
-        // REVU а без нахождения maxRating сможете ? В один проход
-        // Наверняка можно, но, к сожалению, затрудняюсь. Не очень глубоко погружена в тему стримов
-        int maxRating = trainees.stream()
-                .mapToInt(Trainee::getRating)
-                .max()
-                .orElseThrow(() -> new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND));
+        int maxRating = 1;
 
         List<Trainee> result = new ArrayList<>();
         for (Trainee el : trainees) {
             if (el.getRating() == maxRating) {
+                result.add(el);
+            }
+
+            if (el.getRating() > maxRating) {
+                maxRating = el.getRating();
+                result.clear();
                 result.add(el);
             }
         }

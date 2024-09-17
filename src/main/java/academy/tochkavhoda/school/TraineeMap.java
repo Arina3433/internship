@@ -13,30 +13,21 @@ public class TraineeMap {
     }
 
     public void addTraineeInfo(Trainee trainee, String institute) throws TrainingException {
-        // REVU не надо contains, putIfAbsent сама скажет
-        if (traineeInstituteMap.containsKey(trainee)) {
+        if (traineeInstituteMap.putIfAbsent(trainee, institute) != null) {
             throw new TrainingException(TrainingErrorCode.DUPLICATE_TRAINEE);
         }
-
-        traineeInstituteMap.put(trainee, institute);
     }
 
     public void replaceTraineeInfo(Trainee trainee, String institute) throws TrainingException {
-        // REVU не надо contains, replace сама скажет
-        if (!traineeInstituteMap.containsKey(trainee)) {
+        if (traineeInstituteMap.replace(trainee, institute) == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
-
-        traineeInstituteMap.put(trainee, institute);
     }
 
     public void removeTraineeInfo(Trainee trainee) throws TrainingException {
-        // REVU не надо contains, remove сама скажет
-        if (!traineeInstituteMap.containsKey(trainee)) {
+        if (traineeInstituteMap.remove(trainee) == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
-
-        traineeInstituteMap.remove(trainee);
     }
 
     public int getTraineesCount() {
@@ -44,12 +35,13 @@ public class TraineeMap {
     }
 
     public String getInstituteByTrainee(Trainee trainee) throws TrainingException {
-        // REVU не надо contains, get сама скажет
-        if (!traineeInstituteMap.containsKey(trainee)) {
+        String institute = traineeInstituteMap.get(trainee);
+
+        if (institute == null) {
             throw new TrainingException(TrainingErrorCode.TRAINEE_NOT_FOUND);
         }
 
-        return traineeInstituteMap.get(trainee);
+        return institute;
     }
 
     public Set<Trainee> getAllTrainees() {

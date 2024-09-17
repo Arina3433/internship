@@ -29,11 +29,7 @@ public class TraineeBidiMap {
             throw new TrainingException(TrainingErrorCode.DUPLICATE_PASSPORT);
         }
 
-        // REVU bidiMap.replace
-        // насколько я понимаю метод replace может заменить одного trainee с паспортом passport на нового trainee,
-        // но он не может заменить ключ? Т.е. нельзя с помощью replace заменить passport на другой
-        bidiMap.removeValue(trainee);
-        bidiMap.put(passport, trainee);
+        bidiMap.inverseBidiMap().replace(trainee, passport);
     }
 
     public void removeTrainee(Trainee trainee) throws TrainingException {
